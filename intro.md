@@ -3,7 +3,7 @@
 **Why?** To remove manual overhead
 **What?** IT Automation tool and agent less tool and built on python and dependent on python
 
-## architectuRE
+## architecture
 ANSIBLE_INSTALLED_SERVER(CONTROLL NODE) ==========>>>>>  WHERE_TASKS_ARE_PERFORMED(MANAGED NODE)
            
 ## Feature
