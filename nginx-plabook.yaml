@@ -1,0 +1,7 @@
+---
+- name: Example playbook to access EC2 instance
+  hosts: app # This refers to the 'app' group in your inventory file
+  gather_facts: no # Optional: Don't gather facts (speeds up playbook execution)
+  become: true
+  roles:
+    - first-role

@@ -1,0 +1,26 @@
+---
+# tasks file for first-role
+# - name: Ping the EC2 instance
+#   ansible.builtin.ping: # This uses the Ansible 'ping' module to test connectivity
+
+- name: update instance
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: install nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+
+- name: serve html
+  ansible.builtin.copy:
+    src: files/index.html
+    dest: /var/www/html
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: restart nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted
