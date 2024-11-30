@@ -32,7 +32,9 @@ adhoc commnads=> When you have to run some simple or single task
 ansible roles=> Breaking down every task in a plabook in respective folders it is roles , It is done for 
 modularity and readabilty.Can be shared across.
 
-command: `ansible-galaxy role init roleName`
+command:
+
+ ```ansible-galaxy role init roleName```
 
 ansible-galaxy=> a marketplace for ansible roles where we can use predefined roles and deploy our roles
 
@@ -40,11 +42,11 @@ idenpotent=> If the file or folder already exists it will not fail it will just 
 not create a file 
 
 publish roles=> Create a github repo of the role , Create api token from collections
-` ansible-galaxy import github-user name-of-repo --token <token> `
+``` ansible-galaxy import github-user name-of-repo --token <token> ```
 
 # ansible vault
 1. Create Vault password 
-`openssl rand -base64 2048 > vault.pass`
+```openssl rand -base64 2048 > vault.pass```
 
 2. Create vault
-`ansible-vault create group_vars/all/pass.yaml --vault-password-file vault.pass`
+```ansible-vault create group_vars/all/pass.yaml --vault-password-file vault.pass```
