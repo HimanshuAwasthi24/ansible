@@ -42,11 +42,17 @@ idenpotent=> If the file or folder already exists it will not fail it will just 
 not create a file 
 
 publish roles=> Create a github repo of the role , Create api token from collections
+
+
 ``` ansible-galaxy import github-user name-of-repo --token <token> ```
 
 # ansible vault
 1. Create Vault password 
+
+
 ```openssl rand -base64 2048 > vault.pass```
 
 2. Create vault
+
+
 ```ansible-vault create group_vars/all/pass.yaml --vault-password-file vault.pass```
