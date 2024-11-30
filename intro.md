@@ -22,7 +22,13 @@ yaml        |  new langauge      |  new laungauge
 
 **Inventory:** List of hosts or managed nodes(example: inventory.ini or /etc/ansible/hosts)
 
-**plabooks:** List of instructions to be run on managed nodes or tasks to be performed 
+**plabooks:** List of instructions to be run on managed nodes or tasks to be performed
+
+## password less auth
+**using pem file**
+```bash
+ssh-copy-id -f "-o IdentityFIle <path to key-pair or pem>" user@PublicIP
+```
 
 **adhoc commnads:** When you have to run some simple or single task 
 [EXAMPLE]
