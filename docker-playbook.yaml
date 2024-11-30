@@ -1,0 +1,16 @@
+---
+- name: playbook to check and install docker
+  hosts: all
+  become: true
+  tasks:
+    - name: check docker on machines
+      ansible.builtin.command: docker --version
+      register: output
+      ignore_errors: yes
+
+    - name: install docker when not there
+      ansible.builtin.apt:
+        update_cache: yes
+        name: docker.io
+        state: present
+      when: output.failed
