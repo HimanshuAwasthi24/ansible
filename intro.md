@@ -24,12 +24,19 @@ yaml        |  new langauge      |  new laungauge
 
 **plabooks:** List of instructions to be run on managed nodes or tasks to be performed
 
-## password less auth
+## passwordless auth
 **using pem file**
 ```bash
 ssh-copy-id -f "-o IdentityFIle <path to key-pair or pem>" user@PublicIP
 ```
-
+**using password**
+1. update file for passwordAuthentication=yes
+2. vi /etc/ssh/sshd_config
+3. restart ssh service
+4. create password for user `sudo passwd ubuntu`
+```bash
+ssh-copy-id user@PublicIP
+```
 **adhoc commnads:** When you have to run some simple or single task 
 [EXAMPLE]
 ```bash
