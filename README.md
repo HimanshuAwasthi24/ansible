@@ -87,3 +87,15 @@ openssl rand -base64 2048 > vault.pass
 ```bash
 ansible-vault create group_vars/all/pass.yaml --vault-password-file vault.pass
 ```
+After above command enter values in key-pair like
+[EXAMPLE]
+ec2_access_kay: value
+ec2_secrete_key: value
+
+now you can access keys using {{ec2_access_key}} in playbook
+
+3. execute playbook with
+
+```bash
+ansible-playbook -i inventory.ini nginx-playbook.yaml --vault-password-file vault.pass
+```
