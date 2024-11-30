@@ -1,0 +1,5 @@
+---
+# tasks file for ec2-delete
+- name: delete ubuntu instance
+  ansible.builtin.command: /sbin/shutdown -t now
+  when: ansible_facts["os_family"] == "Debian"

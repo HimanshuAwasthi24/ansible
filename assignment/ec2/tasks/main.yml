@@ -1,0 +1,18 @@
+---
+- name: start an instance with a public IP address
+  amazon.aws.ec2_instance:
+    name: "{{item.name}}"
+    key_name: "{{key}}"
+    vpc_subnet_id: subnet-0cd94e9aeae99b898
+    instance_type: t2.micro
+    security_group: default
+    region: ap-south-1
+    aws_access_key: "{{ec2_access_key}}" # From vault as defined
+    aws_secret_key: "{{ec2_secret_key}}" # From vault as defined
+    network:
+      assign_public_ip: true
+    image_id: "{{item.image}}"
+  loop:
+    - { image: "ami-0dee22c13ea7a9a67", name: "ubuntu-1" }
+    - { image: "ami-0dee22c13ea7a9a67", name: "ubuntu-2" }
+    - { image: "ami-0614680123427b75e", name: "amazon-1" }
