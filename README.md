@@ -1,6 +1,6 @@
 # Ansible
 
-**Why?** To remove manual overhead
+**Why?** To remove manual overhead </br>
 **What?** IT Automation tool and agent less tool and built on python and dependent on python
 
 ## architecture
